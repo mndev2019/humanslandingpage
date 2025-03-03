@@ -7,7 +7,7 @@ const Trending = () => {
     return (
         <>
             <section className='py-5'>
-                <div className="container mx-auto px-4">
+                <div className="container ">
                     <div className="grid grid-cols-1">
                         <div className="col-span-1">
                             <div className="w-full">

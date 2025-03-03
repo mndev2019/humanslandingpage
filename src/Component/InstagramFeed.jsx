@@ -22,7 +22,7 @@ const InstagramFeed = () => {
 
     return (
         <>
-            <div className="w-full" style={{ display: "flex", justifyContent: "center" }}>
+            <div className="w-full" style={{ display: "flex", justifyContent: "center" , overflow:"hidden" }} >
                 {/* <div className="elfsight-app-222506e4-c7aa-4c72-afa1-9952ae07b72b" data-elfsight-app-lazy></div> */}
                 <div class="elfsight-app-7246ec53-92a7-48ca-8133-2558f4e9706a" data-elfsight-app-lazy></div>
             </div>

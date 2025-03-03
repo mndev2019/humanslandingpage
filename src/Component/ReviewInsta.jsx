@@ -23,12 +23,12 @@ function ReviewInsta() {
 
     return (
         <>
-            <section className='container mx-auto px-4'>
-                <div className="container">
+            <section className='container' style={{overflow:"hidden"}}>
+                <div className="w-full ">
                     <InstagramFeed />
                 </div>
             </section>
-            <section className="lg:py-10 py-5">
+            <section className="lg:py-10 py-5" style={{overflow:"hidden"}}>
                 <div className="container mx-auto px-4">
                     {/* <div className="w-full text-center">
                         <SectionTitle title={"Testimonials"} subtitle={"Testimonials"} />

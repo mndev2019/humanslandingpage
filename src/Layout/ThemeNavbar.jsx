@@ -7,11 +7,11 @@ import { IoLogoWhatsapp } from 'react-icons/io'
 const ThemeNavbar = () => {
     return (
         <>
-            <nav className="bg-white shadow-md py-2 px-6">
+            <nav className="bg-white shadow-md py-2">
                 <div className="container mx-auto flex justify-between items-center">
                     <div className="text-2xl font-bold">
                         <a href="#" className="text-blue-600">
-                            <img src={logo} className=' h-[60px] md:text-left text-center' alt='image'/>
+                            <img src={logo} className='md:h-[79px] h-[60px] md:text-left text-center' alt='image'/>
                         </a>
                     </div>
                     <div className="flex md:gap-4 gap-2 items-center">

@@ -4,15 +4,30 @@
 body {
     font-family: "Barlow", sans-serif;
 }
-.textpurple{
+
+.textpurple {
     color: #542c7c;
 }
-.bgpurple{
+
+.bgpurple {
     background-color: #542c7c;
 }
-.cursive{
+
+.cursive {
     font-family: "Mr Dafoe", cursive;
 }
-.star{
+
+.star {
     color: #fcbf02;
+}
+
+.container {
+    max-width: 100% !important;
+    padding: 0 5rem;
+}
+@media(max-width:768px){
+    .container {
+        max-width: 100% !important;
+        padding: 0 2rem;
+    } 
 }
