@@ -34,7 +34,8 @@ function ReviewInsta() {
                         <SectionTitle title={"Testimonials"} subtitle={"Testimonials"} />
                     </div> */}
                     <div className="w-full">
-                    <div class="elfsight-app-e2f9d2ee-355e-42ad-ad77-3437d5d66cd3" data-elfsight-app-lazy></div>
+                    {/* <div class="elfsight-app-e2f9d2ee-355e-42ad-ad77-3437d5d66cd3" data-elfsight-app-lazy></div> */}
+                    <div class="elfsight-app-57bd9676-3a7d-40a2-8cff-8898b903e970" data-elfsight-app-lazy></div>
                     </div>
                 </div>
             </section>
