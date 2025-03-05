@@ -35,7 +35,7 @@ const Banner = () => {
                                     <img
                                         src={bnr}
                                         alt='Banner image'
-                                        className='w-full  h-[500px] object-fill'
+                                        className='w-full  lg:h-[500px] h-auto object-fill'
                                     />
                                 </div>
                             </>
