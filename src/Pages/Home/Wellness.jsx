@@ -55,16 +55,33 @@ const Wellness = () => {
                         {
                             arr.map((itm) => (
                                 <>
-                                    <div className="col-span-1 text-center ">
+                                    {/* <div className="col-span-1 text-center ">
                                         <div className="group border border-[#B57EC1] rounded-[20px] md:p-6 p-4 text-center h-full hover:bg-[#502E7B] transition-all duration-300">
                                             <img src={itm.image} alt='image' className='mx-auto md:h-auto h-[70px] transform transition-transform duration-300 group-hover:scale-125' />
-                                            {/* <div className="bgpurple rounded-[25px] p-4 w-[100px] h-[100px] mx-auto flex items-center justify-center rotate-[15deg]">
-                                    <img src={raw} alt="image" className="-rotate-[15deg] w-[40px] h-[40px]" />
-                                </div> */}
+                                           
                                             <h2 className="text-[#502E7B] font-[700] lg:text-[28px] md:text-[20px] text-[16px] mt-4 group-hover:text-white transition-all">{itm.title}</h2>
                                             <p className="text-black font-[500] lg:text-[20px] md:text-[18px] text-[14px] mt-1 group-hover:text-[#FAEBEB] transition-all">{itm.para}</p>
                                         </div>
+                                    </div> */}
+                                    <div className="col-span-1 text-center">
+                                        <div
+                                            className="group border border-[#B57EC1] rounded-[20px] md:p-6 p-4 text-center h-full hover:bg-[#502E7B] focus-within:bg-[#502E7B] transition-all duration-300"
+                                            tabIndex={0}
+                                        >
+                                            <img
+                                                src={itm.image}
+                                                alt="image"
+                                                className="mx-auto md:h-auto h-[70px] transform transition-transform duration-300 group-hover:scale-125 group-focus-within:scale-125"
+                                            />
+                                            <h2 className="text-[#502E7B] font-[700] lg:text-[28px] md:text-[20px] text-[16px] mt-4 group-hover:text-white group-focus-within:text-white transition-all">
+                                                {itm.title}
+                                            </h2>
+                                            <p className="text-black font-[500] lg:text-[20px] md:text-[18px] text-[14px] mt-1 group-hover:text-[#FAEBEB] group-focus-within:text-[#FAEBEB] transition-all">
+                                                {itm.para}
+                                            </p>
+                                        </div>
                                     </div>
+
                                 </>
                             ))
                         }
