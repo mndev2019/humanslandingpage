@@ -25,7 +25,7 @@ const Banner = () => {
 
     return (
         <>
-            <section className="hero_banner banner ">
+            {/* <section className="hero_banner banner ">
 
                 <Slider className='h-full ' {...settings}>
                     {
@@ -45,8 +45,8 @@ const Banner = () => {
 
                 </Slider>
 
-            </section>
-            {/* <section className="hero_banner">
+            </section> */}
+            <section className="hero_banner">
                 <div className='w-full'>
                     <img
                         src={banner1}
@@ -55,7 +55,7 @@ const Banner = () => {
 
                     />
                 </div>
-            </section> */}
+            </section>
         </>
     );
 };

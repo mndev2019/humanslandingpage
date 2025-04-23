@@ -25,7 +25,7 @@ const Trending = () => {
         slidesToScroll: 1,
         responsive: [
             {
-                breakpoint: 1024, // tablets
+                breakpoint: 1094, // tablets
                 settings: {
                     slidesToShow: 3,
                 }
@@ -94,15 +94,15 @@ const Trending = () => {
                             {...settings}
                         >
                             {trend.map((itm, index) => (
-                                <div key={index} className="px-2">
-                                    <div className="w-full border border-[#B57EC1] rounded-[8px] p-4 flex flex-col items-center text-center">
+                                <div key={index} className="px-2 ">
+                                    <div className="w-full h-full  border border-[#B57EC1] rounded-[8px] p-4 flex flex-col items-center text-center ">
                                         <img
                                             src={itm.image}
                                             alt="Evil Eye Spray"
                                             className="w-[160px] h-[300px] object-contain mb-4"
                                         />
 
-                                        <h2 className="font-[700] lg:text-[24px] md:text-[20px] text-[16px] textpurple mb-1">
+                                        <h2 className="font-[700] md:text-[18px]   text-[16px] textpurple mb-1 title">
                                             {itm.title}
                                         </h2>
 

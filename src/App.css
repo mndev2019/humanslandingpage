@@ -70,7 +70,9 @@ body {
     font-size: 16px !important;
     font-weight: 700 !important;
 }
-.slick-dots li  {
+/* custom design dots */
+
+/* .slick-dots li  {
     background: #B57EC1 !important;
     width: 20px !important;
     height: 10px !important;
@@ -90,5 +92,5 @@ body {
 }
 .banner button{
     opacity: 0;
-}
+} */
 
