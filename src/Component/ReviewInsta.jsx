@@ -24,7 +24,7 @@ function ReviewInsta() {
     return (
         <>
             <section className='container' style={{overflow:"hidden"}}>
-                <div className="w-full ">
+                <div className="w-full rounded-[15px]">
                     <InstagramFeed />
                 </div>
             </section>

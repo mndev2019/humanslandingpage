@@ -1,14 +1,18 @@
 import React from 'react'
 import Banner from './Banner'
-import USP from './USP'
+
 import Trending from './Trending'
 import ReviewInsta from '../../Component/ReviewInsta'
+import Remedies from './Remedies'
+import Wellness from './Wellness'
 
 const Home = () => {
     return (
         <>
            <Banner/>
-           <USP/>
+           <Remedies/>
+           <Wellness/>
+           
            <Trending/>
            <ReviewInsta/>
         </>
