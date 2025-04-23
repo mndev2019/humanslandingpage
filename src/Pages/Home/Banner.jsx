@@ -18,8 +18,8 @@ const Banner = () => {
         slidesToShow: 1,
         slidesToScroll: 1,
         arrows: false,
-        // autoplay: true,           // Enable autoplay
-        // autoplaySpeed: 3000,     // Slide change every 3 seconds
+        autoplay: true,           // Enable autoplay
+        autoplaySpeed: 3000,     // Slide change every 3 seconds
         pauseOnHover: true,      // Pause on hover
     };
 
