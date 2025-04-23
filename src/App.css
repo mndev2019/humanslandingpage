@@ -88,4 +88,7 @@ body {
 .slick-dots li button:hover:before, .slick-dots li button:focus:before {
     opacity: 0;
 }
+.banner button{
+    opacity: 0;
+}
 
