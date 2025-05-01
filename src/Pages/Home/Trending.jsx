@@ -2,14 +2,24 @@ import React, { useRef } from 'react'
 import Heading from '../../Component/Heading'
 import { FaArrowRight } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
-import evil from '../../assets/Image/evil.svg'
-import anxiety from '../../assets/Image/anxiety.svg'
+// import evil from '../../assets/Image/evil.svg'
+// import anxiety from '../../assets/Image/anxiety.svg'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from 'react-slick'
 import { IoArrowBackOutline, IoArrowForwardOutline } from 'react-icons/io5'
+import axios from 'axios'
+import { APP_URL, BASE_URL } from '../../Apis'
 
 const Trending = () => {
+    const [products, setProducts] = React.useState([]);
+    const getproducts = async () => {
+        const resp = await axios.get(BASE_URL + "products");
+        setProducts(resp.data.data.data);
+    }
+    const viewDetails = (url) => {
+        window.location.href = APP_URL + "products/" + url;
+    }
     let sliderRef = useRef(null);
     const next = () => {
         sliderRef.slickNext();
@@ -44,32 +54,41 @@ const Trending = () => {
             }
         ]
     };
-    const trend = [
-        {
-            image: evil,
-            title: "Evil Eye Spray",
-            quantity: "200ML",
-            price: "14,000"
-        },
-        {
-            image: anxiety,
-            title: "Anti Anxiety Remedy",
-            quantity: "30ML",
-            price: "14,000"
-        },
-        {
-            image: evil,
-            title: "Evil Eye Spray",
-            quantity: "200ML",
-            price: "14,000"
-        },
-        {
-            image: anxiety,
-            title: "Anti Anxiety Remedy",
-            quantity: "30ML",
-            price: "14,000"
-        },
-    ]
+    const addtoCart = async (e, id) => {
+        e.preventDefault();
+        // e.stopPropagation();
+        const resp = await axios.post(BASE_URL + "add_to_cart", { id: id, table: "products" });
+        console.log(resp);
+    }
+    // const trend = [
+    //     {
+    //         image: evil,
+    //         title: "Evil Eye Spray",
+    //         quantity: "200ML",
+    //         price: "14,000"
+    //     },
+    //     {
+    //         image: anxiety,
+    //         title: "Anti Anxiety Remedy",
+    //         quantity: "30ML",
+    //         price: "14,000"
+    //     },
+    //     {
+    //         image: evil,
+    //         title: "Evil Eye Spray",
+    //         quantity: "200ML",
+    //         price: "14,000"
+    //     },
+    //     {
+    //         image: anxiety,
+    //         title: "Anti Anxiety Remedy",
+    //         quantity: "30ML",
+    //         price: "14,000"
+    //     },
+    // ];
+    React.useEffect(() => {
+        getproducts();
+    }, []);
     return (
         <>
             <section className='pb-5'>
@@ -80,9 +99,9 @@ const Trending = () => {
                                 <Heading title="Trending this Week" />
                             </div>
                             <div>
-                                <Link to="/trending" className='text-[#B57EC1] text-[18px] font-[600] flex items-center gap-1'>
+                                <a href='https://www.humansofanimalland.com/shop' className='text-[#B57EC1] text-[18px] font-[600] flex items-center gap-1'>
                                     View all <FaArrowRight />
-                                </Link>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -93,12 +112,12 @@ const Trending = () => {
                             }}
                             {...settings}
                         >
-                            {trend.map((itm, index) => (
-                                <div key={index} className="px-2 ">
+                            {products.map((itm, index) => (
+                                <div onClick={() => viewDetails(itm.url)} key={index} className="px-2 cursor-pointer ">
                                     <div className="w-full h-full  border border-[#B57EC1] rounded-[8px] p-4 flex flex-col items-center text-center ">
                                         <img
-                                            src={itm.image}
-                                            alt="Evil Eye Spray"
+                                            src={APP_URL + "public/assets/images/" + itm.images[0].image}
+                                            alt={itm.title}
                                             className="w-[160px] h-[300px] object-contain mb-4"
                                         />
 
@@ -106,14 +125,14 @@ const Trending = () => {
                                             {itm.title}
                                         </h2>
 
-                                        <p className="textpurple md:text-[14px] text-[12px] leading-[1.4] mb-1">
-                                            Wards off Negativity<br />
-                                            Ancient Protection<br />
-                                            Works as a Shield
-                                        </p>
+                                        <ul className="textpurple md:text-[14px] text-[12px] leading-[1.4] mb-1">
+                                            <li>
+
+                                            </li>
+                                        </ul>
 
                                         <p className="textpurple font-[700] md:text-[14px] text-[12px] mt-1 mb-2">
-                                            {itm.quantity}
+                                            100ml
                                         </p>
 
                                         <div className="flex items-center justify-center textpurple mb-2">
@@ -124,10 +143,10 @@ const Trending = () => {
                                         </div>
 
                                         <p className="text-black font-semibold lg:text-[20px] md:text-[18px] text-[16px] mb-4">
-                                            ₹ {itm.price}
+                                            {itm.currency} {itm.price}
                                         </p>
 
-                                        <button className="bgpurple text-white w-[80%] px-8 py-2 rounded-full text-[16px] font-semibold hover:bg-[#72349e] transition-all">
+                                        <button onClick={(e) => addtoCart(e, itm.id)} className="bgpurple cursor-pointer text-white w-[80%] px-8 py-2 rounded-full text-[16px] font-semibold hover:bg-[#72349e] transition-all">
                                             Add to cart
                                         </button>
                                     </div>
@@ -136,10 +155,10 @@ const Trending = () => {
                         </Slider>
                         <div style={{ textAlign: "center" }} className='flex'>
                             <button className="button bgpurple h-[30px] w-[30px] rounded-full justify-center items-center flex absolute top-[50%] left-[-28px]" onClick={previous}>
-                            <IoArrowBackOutline className='text-white text-lg' />
+                                <IoArrowBackOutline className='text-white text-lg' />
                             </button>
                             <button className="button  bgpurple h-[30px] w-[30px] rounded-full justify-center items-center flex absolute top-[50%] right-[-28px]" onClick={next}>
-                            <IoArrowForwardOutline className='text-white text-lg' />
+                                <IoArrowForwardOutline className='text-white text-lg' />
                             </button>
                         </div>
                     </div>
