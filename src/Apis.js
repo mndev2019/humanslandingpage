@@ -1,3 +1,3 @@
-export const BASE_URL = "http://localhost/laravel/animalhuman/api/";
-export const APP_URL = "http://localhost/laravel/animalhuman/";
-export const IMAGE_URL = "http://localhost/laravel/animalhuman/public/assets/images/";
+export const BASE_URL = "https://www.humansofanimalland.com/api/";
+export const APP_URL = "https://www.humansofanimalland.com/";
+export const IMAGE_URL = "https://www.humansofanimalland.com/public/assets/images/";
