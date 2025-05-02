@@ -1,10 +1,21 @@
 import React from 'react'
 import Heading from '../../Component/Heading'
-import remedies1 from '../../assets/Image/remedies1.png'
-import remedies2 from '../../assets/Image/remedies2.png'
-import remedies3 from '../../assets/Image/remedies3.png'
+import axios from 'axios';
+import { BASE_URL, IMAGE_URL } from '../../Apis';
+import { Link } from 'react-router-dom';
+// import remedies1 from '../../assets/Image/remedies1.png'
+// import remedies2 from '../../assets/Image/remedies2.png'
+// import remedies3 from '../../assets/Image/remedies3.png'
 
 const Remedies = () => {
+   const [items, setItems] = React.useState([]);
+   const getitems = async () => {
+      const resp = await axios.get(BASE_URL + "advertise");
+      setItems(resp.data.data);
+   }
+   React.useEffect(() => {
+      getitems();
+   }, []);
    return (
       <section className='py-5'>
          <div className="container">
@@ -13,21 +24,21 @@ const Remedies = () => {
                   <Heading title="Remedies Solutions" />
                </div>
             </div>
-            <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1">
-               <div className="col-span-1 ">
-                  <img src={remedies1} className='w-full' />
-                  {/* <div className=''>
-                        <button className='bgpurple  text-white rounded-md px-6 py-2'>
-                           Shop Now
-                        </button>
-                     </div> */}
-               </div>
-               <div className="col-span-1">
-                  <img src={remedies2} className='w-full' />
-               </div>
-               <div className="col-span-1">
-                  <img src={remedies3} className='w-full' />
-               </div>
+            <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4">
+               {
+                  items.map(itm => (
+                     <>
+                        <div className="col-span-1 ">
+                           <Link to={itm.return_url} target='_blank' className="w-full border h-full border-blue-100 rounded-xl overflow-hidden block">
+                              <img src={IMAGE_URL + itm.image} className='w-full h-full object-cover' />
+                           </Link>
+
+                        </div>
+                     </>
+                  ))
+               }
+
+
             </div>
          </div>
       </section>
