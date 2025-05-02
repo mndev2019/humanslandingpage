@@ -114,11 +114,11 @@ const Trending = () => {
                         >
                             {products.map((itm, index) => (
                                 <div onClick={() => viewDetails(itm.url)} key={index} className="px-2 cursor-pointer ">
-                                    <div className="w-full h-full  border border-[#B57EC1] rounded-[8px] p-4 flex flex-col items-center text-center ">
+                                    <div className="w-full h-full overflow-hidden  border border-[#B57EC1] rounded-[8px] p-4 flex flex-col items-center text-center ">
                                         <img
                                             src={APP_URL + "public/assets/images/" + itm.images[0].image}
                                             alt={itm.title}
-                                            className="w-[160px] h-[300px] object-contain mb-4"
+                                            className="max-w-full object-contain mb-4 scale-110"
                                         />
 
                                         <h2 className="font-[700] md:text-[18px]   text-[16px] textpurple mb-1 title">
